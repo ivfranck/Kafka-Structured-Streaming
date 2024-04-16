@@ -1,0 +1,33 @@
+
+CREATE STREAM crypto_coins (
+  id VARCHAR KEY,
+  symbol VARCHAR,
+  name VARCHAR,
+  image VARCHAR,
+  current_price DOUBLE,
+  market_cap BIGINT,
+  market_cap_rank INTEGER,
+  fully_diluted_valuation VARCHAR,
+  total_volume BIGINT,
+  high_24h DOUBLE,
+  low_24h DOUBLE,
+  price_change_24h DOUBLE,
+  price_change_percentage_24h DOUBLE,
+  market_cap_change_24h DOUBLE,
+  market_cap_change_percentage_24h DOUBLE,
+  circulating_supply DOUBLE,
+  total_supply VARCHAR,
+  max_supply VARCHAR,
+  ath DOUBLE,
+  ath_change_percentage DOUBLE,
+  ath_date VARCHAR,
+  atl DOUBLE,
+  atl_change_percentage DOUBLE,
+  atl_date VARCHAR,
+  last_updated VARCHAR,
+  checkpoint VARCHAR
+) WITH (
+  KAFKA_TOPIC = 'crypto_coins',
+  PARTITIONS = 1,
+  VALUE_FORMAT = 'json'
+)
